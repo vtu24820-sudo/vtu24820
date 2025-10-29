@@ -1,0 +1,13 @@
+Import Openai
+Import Gradio 
+Openai.api_key = "SK-T7Oiyemfqs8iua5rcpaat3blbkfjt0tj7dugby9EyBSJC" 
+messages = [{"Role": "System", "Content": "You Are A Financial Experts That Specializes in Real
+Estate Investment and Negotiation"}] 
+Def CustomChatgpt (User_Input):
+Messages.append ({"Role": "User", "Content": User_Input}) 
+Response = Openai.ChatCompletion.Create (model = "GPT-3.5 Turbo", Messages = Messages) 
+Chatgpt_reply = Response ["Choices"] [0] ["Message"] ["Content"] 
+Messages.append ({"Role": "Assistant", "Content": Chatgpt_reply}) return 
+chatgpt_reply 
+demo = gradio.interface (UN = Customchatgpt, inputs = "Text", outputs = "Text", title = "Intelligent chatbot") 
+demo.launch (Share = TRUE)
